@@ -23,6 +23,35 @@ private void FixedUpdate()
     _camera.transform.position= new Vector3 (charPos.x,charPos.y,charPos.z - 1.0f);
 }
 
+void Update() // Not ~ her frame çalışıyor. 300 per frame 
+{
+ if (Input.GetKey(KeyCode.A))
+ {
+    speed = 1.0f;
+    //Debug.Log("Hiz 1.0f");
+ }
+ else
+ {
+    speed = 1.0f;
+    //Debug.Log("Hiz 1.0f");
+ }
 
+  if (Input.GetKey(KeyCode.D))
+ {
+    speed = 1.0f;
+    //Debug.Log("Hiz 1.0f");
+ }
+ else
+ {
+    speed = 1.0f;
+    //Debug.Log("Hiz 1.0f");
+ }
+
+
+charPos = new Vector3(charPos.x + (speed * time.deltaTime),charPos.y);
+transform.position = charPos; // Hesapladığım pozisyon karaktere işlenecek.
+
+_animator.SetFloat("speed" , speed);
+}
 }
 
