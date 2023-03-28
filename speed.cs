@@ -25,33 +25,22 @@ private void FixedUpdate()
 
 void Update() // Not ~ her frame çalışıyor. 300 per frame 
 {
- if (Input.GetKey(KeyCode.A))
+ if (Input.GetKey(KeyCode.Space))
  {
-    speed = 1.0f;
-    //Debug.Log("Hiz 1.0f");
+    speed = 2.0f;
+    //Debug.Log("Hiz 1.5f");
  }
  else
  {
-    speed = 1.0f;
-    //Debug.Log("Hiz 1.0f");
- }
-
-  if (Input.GetKey(KeyCode.D))
- {
-    speed = 1.0f;
-    //Debug.Log("Hiz 1.0f");
- }
- else
- {
-    speed = 1.0f;
-    //Debug.Log("Hiz 1.0f");
+    speed = 0.0f;
+    //Debug.Log("Hiz 0.0f");
  }
 
 
-charPos = new Vector3(charPos.x + (speed * time.deltaTime),charPos.y);
+charPos = new Vector3(charPos.x + (speed * time.deltaTime),charPos.y,charPos.z -1.0f);
 transform.position = charPos; // Hesapladığım pozisyon karaktere işlenecek.
 
-_animator.SetFloat("speed" , speed);
+_animator.SetFloat("speed" , speed)
 }
 }
 
